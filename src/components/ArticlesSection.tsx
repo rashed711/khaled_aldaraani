@@ -26,46 +26,55 @@ const ArticlesSection: React.FC = () => {
                     {articles.map((article, index) => (
                         <motion.div
                             key={article.id}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="group bg-white/5 border border-white/10 overflow-hidden hover:border-saudi-gold/30 transition-all duration-500"
+                            transition={{ delay: index * 0.1, duration: 0.6 }}
+                            className="group flex flex-col bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-saudi-gold/40 transition-all duration-500 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
                         >
-                            <div className="aspect-w-16 aspect-h-10 relative overflow-hidden h-48">
-                                <div className="absolute inset-0 bg-saudi-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
-                                <img
+                            <div className="h-56 md:h-64 relative overflow-hidden">
+                                <div className="absolute inset-0 bg-saudi-navy/30 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                                <motion.img
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ duration: 0.7 }}
                                     src={article.image}
                                     alt={article.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    className="w-full h-full object-cover"
                                 />
-                            </div>
-
-                            <div className="p-8">
-                                <div className="flex items-center gap-4 text-xs text-saudi-gold mb-4 font-bold">
-                                    <span className="uppercase tracking-wider">{article.category}</span>
-                                    <span className="w-1 h-1 rounded-full bg-white/30"></span>
-                                    <div className="flex items-center gap-1 text-gray-400">
-                                        <Calendar className="w-3 h-3" />
-                                        <span>{article.date}</span>
+                                <div className="absolute top-4 right-4 z-20">
+                                    <div className="bg-saudi-navy/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-[10px] md:text-xs font-bold text-saudi-gold border border-saudi-gold/20 shadow-lg">
+                                        {article.category}
                                     </div>
                                 </div>
+                            </div>
 
-                                <h3 className="text-xl font-bold text-white mb-3 leading-snug group-hover:text-saudi-gold transition-colors">
+                            <div className="p-6 md:p-8 flex-1 flex flex-col relative">
+                                <div className="absolute top-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-saudi-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                                <div className="flex items-center gap-2 text-gray-400 text-[10px] md:text-xs font-bold mb-4">
+                                    <div className="p-1.5 bg-white/5 rounded-full text-saudi-gold">
+                                        <Calendar className="w-3 h-3" />
+                                    </div>
+                                    <span>{article.date}</span>
+                                </div>
+
+                                <h3 className="text-xl font-bold text-white mb-4 leading-snug group-hover:text-saudi-gold transition-colors duration-300">
                                     {article.title}
                                 </h3>
 
-                                <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                                <p className="text-gray-400 text-sm leading-relaxed mb-8 line-clamp-3 group-hover:text-gray-300">
                                     {article.excerpt}
                                 </p>
 
-                                <Link
-                                    to={`/articles/${article.slug}`}
-                                    className="inline-flex items-center gap-2 text-white text-sm font-bold border-b border-saudi-gold/30 pb-1 group-hover:border-saudi-gold transition-colors"
-                                >
-                                    اقرأ المقال كاملاً
-                                    <ArrowLeft className="w-4 h-4" />
-                                </Link>
+                                <div className="mt-auto">
+                                    <Link
+                                        to={`/articles/${article.slug}`}
+                                        className="inline-flex items-center gap-2 text-white text-sm font-bold group/link"
+                                    >
+                                        <span className="border-b border-saudi-gold/30 pb-0.5 group-hover/link:border-saudi-gold transition-colors">اقرأ المقال كاملاً</span>
+                                        <ArrowLeft className="w-4 h-4 text-saudi-gold transition-transform group-hover/link:-translate-x-1" />
+                                    </Link>
+                                </div>
                             </div>
                         </motion.div>
                     ))}

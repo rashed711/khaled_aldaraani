@@ -52,7 +52,7 @@ const StatsSection: React.FC = () => {
                             transition={{ delay: index * 0.1, duration: 0.6, type: "spring" }}
                             className="text-center group"
                         >
-                            <div className="w-16 h-16 mx-auto mb-4 bg-saudi-navy/10 rounded-full flex items-center justify-center group-hover:bg-saudi-navy group-hover:text-saudi-gold transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6">
+                            <div className="w-16 h-16 mx-auto mb-4 bg-saudi-navy/10 rounded-xl flex items-center justify-center group-hover:bg-saudi-navy group-hover:text-saudi-gold transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6">
                                 <stat.icon className="w-8 h-8" />
                             </div>
 

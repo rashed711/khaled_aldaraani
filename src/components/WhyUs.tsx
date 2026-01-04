@@ -14,7 +14,7 @@ const WhyUs: React.FC = () => {
   return (
     <section className="py-32 bg-saudi-navy">
       <div className="container mx-auto px-6">
-        <div className="bg-prestige-surface rounded-3xl p-12 md:p-20 border border-white/5">
+        <div className="bg-prestige-surface rounded-xl p-12 md:p-20 border border-white/5">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <span className="text-saudi-gold font-bold text-xs uppercase mb-6 block">لماذا تختارنا؟</span>

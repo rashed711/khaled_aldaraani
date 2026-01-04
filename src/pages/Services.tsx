@@ -38,7 +38,7 @@ const Services: React.FC = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1, duration: 0.6, type: "spring", stiffness: 50 }}
-                                    className="group relative bg-white/5 border border-white/10 p-6 md:p-8 rounded-sm overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-saudi-gold/20 hover:border-saudi-gold/40"
+                                    className="group relative bg-white/5 border border-white/10 p-6 md:p-8 rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:shadow-saudi-gold/20 hover:border-saudi-gold/40"
                                 >
                                     {/* Abstract Hover Glow */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-saudi-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

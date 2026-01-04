@@ -37,7 +37,7 @@ const TestimonialsSection: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white dark:bg-white/5 p-8 rounded-sm shadow-lg border-t-4 border-saudi-gold relative group hover:-translate-y-2 transition-transform duration-300"
+                            className="bg-white dark:bg-white/5 p-8 rounded-xl shadow-lg border-t-4 border-saudi-gold relative group hover:-translate-y-2 transition-transform duration-300"
                         >
                             <Quote className="absolute top-6 right-6 w-10 h-10 text-saudi-gold/20 mb-4" />
                             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 italic pt-8 relative z-10">
