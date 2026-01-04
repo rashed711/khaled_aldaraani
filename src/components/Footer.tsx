@@ -1,9 +1,9 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-saudi-navy border-t border-white/10 pt-24 pb-12 transition-colors duration-300">
       <div className="container mx-auto px-6">
@@ -22,14 +22,14 @@ const Footer: React.FC = () => {
               مكتب رائد يهدف لتقديم خدمات قانونية نوعية تساهم في تعزيز العدالة ودعم التنمية الاقتصادية في ظل رؤية المملكة ٢٠٣٠.
             </p>
           </div>
-          
+
           <div className="col-span-1">
             <h5 className="font-bold text-white text-lg mb-8 border-r-4 border-saudi-gold pr-4">روابط سريعة</h5>
             <ul className="space-y-5 text-base text-stone-gray font-semibold">
-              <li><a href="#" className="hover:text-saudi-gold transition-all hover:pr-2">الرئيسية</a></li>
-              <li><a href="#about" className="hover:text-saudi-gold transition-all hover:pr-2">عن المكتب</a></li>
-              <li><a href="#services" className="hover:text-saudi-gold transition-all hover:pr-2">مجالات الخبرة</a></li>
-              <li><a href="#contact" className="hover:text-saudi-gold transition-all hover:pr-2">اتصل بنا</a></li>
+              <li><Link to="/" className="hover:text-saudi-gold transition-all hover:pr-2">الرئيسية</Link></li>
+              <li><Link to="/about" className="hover:text-saudi-gold transition-all hover:pr-2">عن المكتب</Link></li>
+              <li><Link to="/services" className="hover:text-saudi-gold transition-all hover:pr-2">مجالات الخبرة</Link></li>
+              <li><Link to="/contact" className="hover:text-saudi-gold transition-all hover:pr-2">اتصل بنا</Link></li>
             </ul>
           </div>
 
@@ -42,14 +42,14 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] md:text-xs text-stone-gray font-black uppercase tracking-[0.1em] opacity-80 text-center md:text-right">
-             جميع الحقوق محفوظة © {currentYear} مكتب خالد الدرعاني للمحاماة والاستشارات القانونية
+            جميع الحقوق محفوظة © {currentYear} مكتب خالد الدرعاني للمحاماة والاستشارات القانونية
           </p>
           <div className="flex gap-8 text-[10px] md:text-xs text-stone-gray font-black uppercase tracking-[0.1em]">
-            <a href="#" className="hover:text-saudi-gold transition-colors">سياسة الخصوصية</a>
-            <a href="#" className="hover:text-saudi-gold transition-colors">الشروط والأحكام</a>
+            <Link to="/privacy" className="hover:text-saudi-gold transition-colors">سياسة الخصوصية</Link>
+            <Link to="/terms" className="hover:text-saudi-gold transition-colors">الشروط والأحكام</Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const reasons = [
   'فهم عميق وشامل للأنظمة واللوائح في المملكة',
@@ -24,13 +25,20 @@ const WhyUs: React.FC = () => {
                 نحن لا نسعى فقط لتقديم خدمة قانونية، بل نهدف لبناء علاقة قائمة على الثقة والنجاح المشترك مع كل عميل.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               {reasons.map((reason, idx) => (
-                <div key={idx} className="flex items-center gap-6 p-6 rounded-xl border border-white/5 bg-saudi-navy/50">
-                  <div className="w-2 h-2 rounded-full bg-saudi-gold"></div>
-                  <span className="text-white font-bold text-lg">{reason}</span>
-                </div>
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  className="flex items-center gap-6 p-6 rounded-xl border border-white/5 bg-saudi-navy/50 group hover:border-saudi-gold/30 transition-colors"
+                >
+                  <div className="w-2 h-2 rounded-full bg-saudi-gold group-hover:scale-150 transition-transform duration-300"></div>
+                  <span className="text-white font-bold text-lg group-hover:text-saudi-gold transition-colors">{reason}</span>
+                </motion.div>
               ))}
             </div>
           </div>
