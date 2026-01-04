@@ -22,9 +22,9 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
   const navLinks = [
     { name: 'الرئيسية', href: '/' },
     { name: 'عن المكتب', href: '/about' },
-    { name: 'قطاعات الخبرة', href: '/services' },
+    { name: 'خدماتنا', href: '/services' },
     { name: 'المقالات', href: '/articles' },
-    { name: 'تواصل مباشر', href: '/contact' },
+    { name: 'تواصل معنا', href: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;

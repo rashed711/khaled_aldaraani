@@ -1,25 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
-const PageLoader: React.FC = () => {
-    const location = useLocation();
-    const [isLoading, setIsLoading] = useState(false);
+interface PageLoaderProps {
+    forceActive?: boolean;
+}
 
-    useEffect(() => {
+const PageLoader: React.FC<PageLoaderProps> = ({ forceActive = false }) => {
+    const location = useLocation();
+    const [isLoading, setIsLoading] = useState(true);
+
+    useLayoutEffect(() => {
+        if (forceActive) {
+            setIsLoading(true);
+            return;
+        }
+
         setIsLoading(true);
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 1500); // 1.5s loader duration
 
         return () => clearTimeout(timer);
-    }, [location.pathname]);
+    }, [location.pathname, forceActive]);
 
     return (
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
             {isLoading && (
                 <motion.div
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}

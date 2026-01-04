@@ -15,7 +15,7 @@ const Services: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>قطاعات الخبرة | خالد الدرعاني للمحاماة</title>
+                <title>خدماتنا | خالد الدرعاني للمحاماة</title>
                 <meta name="description" content="تصفح خدماتنا القانونية المتخصصة في القضايا التجارية، العقارية، الجنائية، والعمالية." />
             </Helmet>
 

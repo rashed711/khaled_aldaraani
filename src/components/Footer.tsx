@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-5 text-base text-stone-gray font-semibold">
               <li><Link to="/" className="hover:text-saudi-gold transition-all hover:pr-2">الرئيسية</Link></li>
               <li><Link to="/about" className="hover:text-saudi-gold transition-all hover:pr-2">عن المكتب</Link></li>
-              <li><Link to="/services" className="hover:text-saudi-gold transition-all hover:pr-2">مجالات الخبرة</Link></li>
+              <li><Link to="/services" className="hover:text-saudi-gold transition-all hover:pr-2">خدماتنا</Link></li>
               <li><Link to="/contact" className="hover:text-saudi-gold transition-all hover:pr-2">اتصل بنا</Link></li>
             </ul>
           </div>

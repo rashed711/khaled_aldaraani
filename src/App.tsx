@@ -1,34 +1,41 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './Layout';
 import ScrollToTop from './components/ScrollToTop';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Articles from './pages/Articles';
-import Contact from './pages/Contact';
+import PageLoader from './components/PageLoader';
 
-
-import ServiceDetail from './pages/ServiceDetail';
-import ArticleDetail from './pages/ArticleDetail';
+// Lazy Load Pages
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const Articles = lazy(() => import('./pages/Articles'));
+const ArticleDetail = lazy(() => import('./pages/ArticleDetail'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
 
 const App: React.FC = () => {
   return (
     <HelmetProvider>
       <Router>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="services/:slug" element={<ServiceDetail />} />
-            <Route path="articles" element={<Articles />} />
-            <Route path="articles/:slug" element={<ArticleDetail />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
-        </Routes>
+        <Suspense fallback={<PageLoader forceActive={true} />}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="services" element={<Services />} />
+              <Route path="services/:slug" element={<ServiceDetail />} />
+              <Route path="articles" element={<Articles />} />
+              <Route path="articles/:slug" element={<ArticleDetail />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="privacy" element={<Privacy />} />
+              <Route path="terms" element={<Terms />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </Router>
     </HelmetProvider>
   );

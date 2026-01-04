@@ -17,7 +17,7 @@ const PageHero: React.FC<PageHeroProps> = ({ title, subtitle, image }) => {
                     alt={title}
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-saudi-navy/80 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-saudi-navy/40"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-saudi-navy via-transparent to-transparent"></div>
             </div>
 

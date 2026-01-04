@@ -18,6 +18,7 @@ const Hero: React.FC = () => {
           src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?q=80&w=2074&auto=format&fit=crop"
           alt="مكتب خالد الدرعاني للمحاماة"
           className="w-full h-full object-cover opacity-60 will-change-transform"
+          fetchPriority="high"
         />
       </div>
 

@@ -41,10 +41,10 @@ const ServicesSection: React.FC = () => {
                         return (
                             <motion.div
                                 key={service.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
+                                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ type: "spring", stiffness: 40, damping: 15, delay: index * 0.1 }}
                                 className="group relative bg-white/5 border border-white/10 p-8 hover:bg-white/10 transition-all duration-500 hover:-translate-y-1 rounded-xl"
                             >
                                 <div className="absolute top-0 right-0 w-20 h-20 bg-saudi-gold/10 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-saudi-gold/20"></div>

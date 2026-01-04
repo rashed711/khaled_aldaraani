@@ -14,11 +14,26 @@ const Contact: React.FC = () => {
             </Helmet>
 
             <main className="bg-saudi-navy min-h-screen">
-                <PageHero
-                    title="نحن هنا لخدمتكم"
-                    subtitle="تواصل معنا اليوم لحجز موعد استشارة أو للاستفسار عن خدماتنا. فريقنا جاهز للرد عليكم."
-                    image="https://images.unsplash.com/photo-1423666639041-f14d70fa4c4d?auto=format&fit=crop&q=80"
-                />
+                <div className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden bg-saudi-navy">
+                    <div className="absolute inset-0 bg-gradient-to-r from-saudi-navy via-saudi-navy/80 to-saudi-navy/40 z-0"></div>
+                    <div className="container mx-auto px-6 relative z-10 text-center pt-20">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="inline-block mb-4">
+                                <div className="h-1 w-20 bg-saudi-gold mx-auto rounded-full mb-6"></div>
+                            </div>
+                            <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                                نحن هنا لخدمتكم
+                            </h1>
+                            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed">
+                                تواصل معنا اليوم لحجز موعد استشارة أو للاستفسار عن خدماتنا. فريقنا جاهز للرد عليكم.
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
 
                 <div className="container mx-auto px-6 py-20">
 
