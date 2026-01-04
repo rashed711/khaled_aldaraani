@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MouseSpotlight from './components/MouseSpotlight';
 
 const Layout: React.FC = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const Layout: React.FC = () => {
 
   return (
     <div className={`min-h-screen flex flex-col transition-colors duration-500 ${darkMode ? 'bg-saudi-navy text-white' : 'bg-gray-50 text-slate-900'}`}>
+      <MouseSpotlight />
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 
       <main className="flex-grow">

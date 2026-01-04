@@ -71,9 +71,10 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
 
             <Link
               to="/contact"
-              className="bg-saudi-gold hover:bg-gold-light text-saudi-navy px-8 py-3 rounded-full text-sm font-black transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-saudi-gold/20"
+              className="relative bg-saudi-gold hover:bg-gold-light text-saudi-navy px-8 py-3 rounded-full text-sm font-black transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-saudi-gold/20 overflow-hidden group animate-[pulse_3s_infinite] hover:animate-none"
             >
-              مركز الاستشارات النخبوية
+              <span className="animate-shimmer"></span>
+              <span className="relative z-10">اطلب استشارة مجانية</span>
             </Link>
           </nav>
 

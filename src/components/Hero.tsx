@@ -62,10 +62,11 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
               <Link
                 to="/contact"
-                className="group relative px-8 py-4 md:px-10 md:py-5 bg-saudi-gold text-saudi-navy rounded-sm font-black text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(139,107,50,0.3)] text-center"
+                className="group relative px-8 py-4 md:px-10 md:py-5 bg-saudi-gold text-saudi-navy rounded-sm font-black text-base md:text-lg overflow-hidden transition-all hover:shadow-[0_0_40px_rgba(139,107,50,0.3)] text-center animate-[pulse_3s_infinite] hover:animate-none"
               >
+                <span className="animate-shimmer"></span>
                 <span className="relative z-10 flex items-center gap-2">
-                  اطلب استشارة خاصة
+                  اطلب استشارة مجانية
                   <ChevronLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
                 </span>
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -80,11 +81,11 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </div >
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-saudi-navy to-transparent z-10"></div>
-    </section>
+      < div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-saudi-navy to-transparent z-10" ></div >
+    </section >
   );
 };
 

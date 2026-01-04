@@ -21,9 +21,12 @@ const CTASection: React.FC = () => {
                         فريقنا من المستشارين ذوي الخبرة جاهز لدراسة قضيتك وتقديم أفضل الحلول القانونية لحماية مصالحك.
                     </p>
                     <div className="flex flex-wrap gap-4">
-                        <Link to="/contact" className="px-8 py-4 bg-saudi-gold text-saudi-navy font-black rounded hover:bg-white hover:text-saudi-navy transition-all duration-300 flex items-center gap-2 animate-[pulse_3s_infinite] hover:animate-none">
-                            اطلب استشارة مجانية
-                            <ArrowLeft className="w-5 h-5" />
+                        <Link to="/contact" className="relative px-8 py-4 bg-saudi-gold text-saudi-navy font-black rounded hover:bg-white hover:text-saudi-navy transition-all duration-300 overflow-hidden group animate-[pulse_3s_infinite] hover:animate-none">
+                            <span className="animate-shimmer"></span>
+                            <span className="relative flex items-center gap-2">
+                                اطلب استشارة مجانية
+                                <ArrowLeft className="w-5 h-5" />
+                            </span>
                         </Link>
                         <Link to="/services" className="px-8 py-4 border border-white/20 text-white font-bold rounded hover:bg-white/10 transition-all duration-300">
                             استكشف خدماتنا
