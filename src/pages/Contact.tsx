@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <h3 className="text-lg md:text-xl font-bold text-white mb-2">البريد الإلكتروني</h3>
-                                        <p className="text-gray-400 text-sm md:text-base">info@aldaraanilaw.sa</p>
+                                        <p className="text-gray-400 text-sm md:text-base">info@aldaraani-law.com</p>
                                     </div>
                                 </div>
                             </div>
