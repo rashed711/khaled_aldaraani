@@ -34,9 +34,11 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
       <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'nav-blur border-b border-white/5 py-4' : 'bg-transparent py-8'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-4 group cursor-pointer z-[60]">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-saudi-gold to-gold-dark rounded-xl flex items-center justify-center text-saudi-navy font-bold text-xl md:text-2xl shadow-xl shadow-saudi-gold/10 group-hover:scale-105 transition-transform duration-500">
-              خ
-            </div>
+            <img
+              src="https://l.top4top.io/p_365645i031.png"
+              alt="Logo"
+              className="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
+            />
             <div className="flex flex-col">
               <span className="font-black text-lg md:text-xl leading-none tracking-tight text-white">خالد الدرعاني</span>
               <span className="text-[9px] md:text-[10px] text-saudi-gold tracking-[0.2em] md:tracking-[0.1em] uppercase font-bold mt-1 opacity-90">محامون ومستشارون قانونيون</span>

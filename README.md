@@ -1,20 +1,25 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# مكتب خالد الدرعاني للمحاماة - Website Documentation
 
-# Run and deploy your AI Studio app
+## Project Structure
+- `src/components`: UI components (Hero, Header, Footer, etc.).
+- `src/pages`: Main page views (Home, About, Services, Articles, etc.).
+- `src/styles`: Global styles (if any specific modules).
+- `src/index.css`: Global Tailwind directives and custom animations.
+- `src/data`: Static data content for articles and services.
 
-This contains everything you need to run your app locally.
+## Key Visual Effects
+1.  **Mouse Spotlight**: Controlled by `components/MouseSpotlight.tsx`. Adds a torchlight effect.
+2.  **Shimmer**: Defined in `index.css` as `.animate-shimmer`. Applied to buttons.
+3.  **Fireflies**: Controlled by `components/BackgroundEffects.tsx`.
+4.  **Reveal**: Reusable entrance animation component in `components/Reveal.tsx`.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1j3XTa5ZJxp41bveHDSdx5ZMGfXceHiSA
+## Maintenance Tips
+- **Colors**: Defined in `tailwind.config` (in `index.html` script currently, can be moved to `tailwind.config.js`).
+    - `saudi-navy`: Primary background.
+    - `saudi-gold`: Primary accent.
+- **Icons**: Using `lucide-react`.
+- **Animations**: Using `framer-motion` for complex moves, and Tailwind CSS for simple pulses/shimmers.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Scripts
+- `npm run dev`: Start development server.
+- `npm run build`: Build for production.

@@ -10,9 +10,11 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-4 mb-10">
-              <div className="w-12 h-12 bg-saudi-gold rounded-xl flex items-center justify-center text-saudi-navy font-black text-2xl shadow-xl">
-                خ
-              </div>
+              <img
+                src="https://l.top4top.io/p_365645i031.png"
+                alt="Logo"
+                className="w-16 h-16 object-contain drop-shadow-2xl"
+              />
               <div className="flex flex-col">
                 <span className="font-black text-2xl text-white tracking-tight">خالد الدرعاني</span>
                 <span className="text-[10px] text-saudi-gold tracking-[0.1em] uppercase font-black opacity-80">محامون ومستشارون قانونيون</span>
