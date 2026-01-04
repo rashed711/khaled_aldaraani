@@ -57,6 +57,21 @@ const About: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Our Philosophy - New Added Section */}
+                <div className="container mx-auto px-6 mb-20">
+                    <Reveal width="100%">
+                        <div className="relative bg-gradient-to-br from-saudi-gold/10 to-transparent border border-saudi-gold/20 p-8 md:p-12 rounded-xl text-center overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-saudi-gold/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                            <div className="relative z-10">
+                                <h3 className="text-2xl md:text-3xl font-black text-white mb-6">فلسفتنا في العمل</h3>
+                                <p className="text-lg md:text-xl text-gray-300 leading-loose max-w-4xl mx-auto font-medium">
+                                    "لا نكتفي بتقديم الاستشارة القانونية فحسب، بل نصنع الحلول التي تسبق التحديات. نؤمن بأن المحاماة الناجحة ترتكز على <span className="text-saudi-gold">الاستباقية</span>، <span className="text-saudi-gold">الدقة المتناهية</span>، و<span className="text-saudi-gold">الفهم العميق</span> لأبعاد كل قضية، لنكون ليس مجرد ممثلين قانونيين، بل شركاء نجاح حقيقيين لعملائنا."
+                                </p>
+                            </div>
+                        </div>
+                    </Reveal>
+                </div>
+
                 {/* Values Section */}
                 <div className="bg-saudi-navy-light py-24 border-y border-white/5">
                     <div className="container mx-auto px-6">

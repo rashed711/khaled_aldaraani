@@ -5,16 +5,27 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-saudi-navy border-t border-white/10 pt-24 pb-12 transition-colors duration-300">
-      <div className="container mx-auto px-6">
+    <footer className="relative bg-[#010409] border-t border-saudi-gold/20 pt-24 pb-12 overflow-hidden">
+      {/* Geometric Pattern Background */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}>
+      </div>
+
+      {/* Golden Glow Overlay */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-saudi-gold/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-4 mb-10">
-              <img
-                src="https://l.top4top.io/p_365645i031.png"
-                alt="Logo"
-                className="w-16 h-16 object-contain drop-shadow-2xl"
-              />
+              <div className="rounded-2xl border border-saudi-gold/30 bg-saudi-gold/5 shadow-[0_0_20px_rgba(212,175,55,0.1)] overflow-hidden">
+                <img
+                  src="https://c.top4top.io/p_3656be96m1.png"
+                  alt="Logo"
+                  className="w-20 h-20 object-contain drop-shadow-2xl"
+                />
+              </div>
               <div className="flex flex-col">
                 <span className="font-black text-2xl text-white tracking-tight">خالد الدرعاني</span>
                 <span className="text-[10px] text-saudi-gold tracking-[0.1em] uppercase font-black opacity-80">محامون ومستشارون قانونيون</span>

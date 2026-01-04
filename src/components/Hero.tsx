@@ -7,15 +7,17 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center bg-saudi-navy overflow-hidden">
       {/* Background with Overlay */}
+      {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-saudi-navy via-saudi-navy/80 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-saudi-navy/95 via-saudi-navy/60 to-transparent/30 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-saudi-navy via-transparent to-transparent z-10"></div>
         <motion.img
           initial={{ scale: 1 }}
           animate={{ scale: 1.1 }}
           transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
           src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?q=80&w=2074&auto=format&fit=crop"
           alt="مكتب خالد الدرعاني للمحاماة"
-          className="w-full h-full object-cover opacity-40 mix-blend-luminosity will-change-transform"
+          className="w-full h-full object-cover opacity-60 will-change-transform"
         />
       </div>
 

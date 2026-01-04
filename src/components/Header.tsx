@@ -34,11 +34,13 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
       <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'nav-blur border-b border-white/5 py-4' : 'bg-transparent py-8'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-4 group cursor-pointer z-[60]">
-            <img
-              src="https://l.top4top.io/p_365645i031.png"
-              alt="Logo"
-              className="w-12 h-12 md:w-14 md:h-14 object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
-            />
+            <div className="relative rounded-xl border border-saudi-gold/30 bg-saudi-gold/5 backdrop-blur-sm overflow-hidden group-hover:border-saudi-gold transition-all duration-500 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)]">
+              <img
+                src="https://c.top4top.io/p_3656be96m1.png"
+                alt="Logo"
+                className="w-14 h-14 md:w-16 md:h-16 object-contain drop-shadow-xl"
+              />
+            </div>
             <div className="flex flex-col">
               <span className="font-black text-lg md:text-xl leading-none tracking-tight text-white">خالد الدرعاني</span>
               <span className="text-[9px] md:text-[10px] text-saudi-gold tracking-[0.2em] md:tracking-[0.1em] uppercase font-bold mt-1 opacity-90">محامون ومستشارون قانونيون</span>
@@ -94,26 +96,55 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
         </div>
 
         {/* Mobile Drawer Overlay */}
-        <div className={`fixed inset-0 bg-saudi-navy z-[55] transition-all duration-500 lg:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-          <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
+        {/* Mobile Drawer Overlay Backdrop */}
+        <div
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] transition-opacity duration-300 lg:hidden ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+
+        {/* Mobile Drawer Sidebar (Right to Left) */}
+        <div
+          className={`fixed top-0 right-0 h-full w-[85%] max-w-[300px] bg-saudi-navy border-l border-white/10 shadow-2xl z-[60] transform transition-transform duration-500 ease-in-out lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="flex flex-col h-full overflow-y-auto">
+            <div className="p-6 flex justify-between items-center border-b border-white/5">
+              <span className="text-saudi-gold font-black text-lg">القائمة الرئيسية</span>
+              <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-3xl font-black transition-colors ${isActive(link.href) ? 'text-saudi-gold' : 'text-white hover:text-saudi-gold'}`}
+                className="text-gray-400 hover:text-white transition-colors"
               >
-                {link.name}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+
+            <div className="flex flex-col p-6 gap-6">
+              {navLinks.map((link, idx) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-xl font-bold flex items-center justify-between group ${isActive(link.href) ? 'text-saudi-gold' : 'text-gray-300'}`}
+                  style={{ transitionDelay: `${idx * 50}ms` }}
+                >
+                  <span className="group-hover:translate-x-[-10px] transition-transform duration-300">{link.name}</span>
+                  {isActive(link.href) && <div className="w-1.5 h-1.5 rounded-full bg-saudi-gold"></div>}
+                </Link>
+              ))}
+
+              <div className="w-full h-px bg-white/10 my-2"></div>
+
+              <Link
+                to="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="bg-saudi-gold text-saudi-navy px-6 py-4 rounded-xl text-center font-black shadow-lg hover:bg-white transition-colors"
+              >
+                اطلب استشارة مجانية
               </Link>
-            ))}
-            <div className="w-20 h-px bg-white/10 my-4"></div>
-            <Link
-              to="/contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="bg-saudi-gold text-saudi-navy px-12 py-5 rounded-full text-xl font-black shadow-2xl"
-            >
-              طلب استشارة
-            </Link>
+            </div>
+
+            <div className="mt-auto p-6 bg-black/20 text-center">
+              <p className="text-xs text-gray-500">© 2024 خالد الدرعاني</p>
+            </div>
           </div>
         </div>
       </header>

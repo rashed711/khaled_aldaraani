@@ -26,6 +26,16 @@ const ArticleDetail: React.FC = () => {
             <Helmet>
                 <title>{`${article.title} | مقالات مكتب خالد الدرعاني`}</title>
                 <meta name="description" content={article.excerpt} />
+
+                {/* Social Media Params */}
+                <meta property="og:title" content={article.title} />
+                <meta property="og:description" content={article.excerpt} />
+                <meta property="og:image" content={article.image} />
+                <meta property="og:type" content="article" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={article.title} />
+                <meta name="twitter:description" content={article.excerpt} />
+                <meta name="twitter:image" content={article.image} />
             </Helmet>
 
             <motion.main
@@ -36,7 +46,8 @@ const ArticleDetail: React.FC = () => {
             >
                 {/* Article Header Image (Parallax-like) */}
                 <div className="relative h-[60vh] overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-saudi-navy via-saudi-navy/50 to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-saudi-navy via-saudi-navy/20 to-transparent z-10"></div>
+                    <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-saudi-navy/80 via-saudi-navy/30 to-transparent z-10"></div>
                     <img
                         src={article.image}
                         alt={article.title}
